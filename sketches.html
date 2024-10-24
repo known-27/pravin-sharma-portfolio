@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAVIN SHARMA | Portfolio</title>
+
+    <style>
+        @media (max-width: 1400px) {
+   .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 1;
+      position: absolute;
+      right: 20px;
+      bottom: 15px;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .nav-links li {
+      padding-top: 10px;
+      width: 100%;
+      text-align: center;
+  }
+  
+  .nav-links a {
+      display: block;
+      padding: 10px 0px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+      opacity: 1;
+      transform: translateY(-20px);
+      animation-fill-mode: forwards;
+  }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #597445;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      /* border: 1px solid #597445;  */
+  }
+
+  .menu.open {
+   display: flex;
+   max-height: 300px;
+   opacity: 1;
+   }
+
+   .menu.open .nav-links a {
+      animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  .menu.close .nav-links a {
+      animation: fadeOut 0.5s ease-in-out forwards;
+  }
+
+   .hamburger.open .bar:nth-child(1) {
+   transform: translateY(8px) rotate(45deg);
+   }
+
+   .hamburger.open .bar:nth-child(2) {
+   opacity: 0;
+   transform: translateX(-20px);
+   }
+
+   .hamburger.open .bar:nth-child(3) {
+   transform: translateY(-8px) rotate(-45deg);
+   }
+}
+    </style>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="background-container"></div>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="pic">
+                <a href="index.html#home"><img src="images/Screenshot 2024-07-27 203654.jpg" alt="Your Logo" height="40px"></a>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <ul class="nav-links menu" id="menu">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="gallery-filter">
+                    <span class="filter-item active" data-filter="all">All</span>
+                    <span class="filter-item" data-filter="graphite">Graphite</span>
+                    <span class="filter-item" data-filter="charcoal">Charcoal</span>
+                    <span class="filter-item" data-filter="paints">Paints</span>
+                    <span class="filter-item" data-filter="scribbles">Scribbles</span>
+                </div>
+            </div>
+            <div class="row">
+                <!-- gallery item start -->
+            <div class="gallery-item charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20211211_000916_435.jpg" alt="shinigami-ryuk"  class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20211202_204921_433.jpg" alt="shawn"  class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item paints">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20240414_205806_056.webp" alt="wall-E"  class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Picsart_22-10-09_15-39-43-462.jpg" alt="mizuhara" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Screenshot_2023-01-29-11-47-58-48_1c337646f29875672b5a61192b9010f9.jpg" alt="i am groot" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Screenshot_2023-01-29-11-48-47-96_1c337646f29875672b5a61192b9010f9.jpg" alt="captain america" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Screenshot_2023-01-30-21-10-30-70_1c337646f29875672b5a61192b9010f9.jpg" alt="blackPink" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Screenshot_2023-01-30-21-10-46-24_1c337646f29875672b5a61192b9010f9.jpg" alt="blackPink" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/Screenshot_2023-01-30-21-11-01-07_1c337646f29875672b5a61192b9010f9.jpg" alt="blackPink" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20210616_025751.jpg" alt="luffy" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+             <!-- gallery item start -->
+             <div class="gallery-item charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20230129_114719.jpg" alt="itachi" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item graphite charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20211006_142048-01.jpg" alt="blackPink" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+            <!-- gallery item start -->
+            <div class="gallery-item charcoal">
+                <div class="gallery-item-inner">
+                    <img src="sketches/IMG_20210914_174254-01.jpg" alt="sanji zoro" class="thumbnail">
+                </div>
+            </div>
+            <!-- gellery item end -->
+
+            
+            </div>
+
+            <div id="image-modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modal-image">
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var loader = document.getElementById("loader");
+    loader.style.opacity = '0';
+    setTimeout(function() {
+        loader.style.display = 'none';
+    }, 500); // 500ms delay to allow opacity transition
+});
+
+    </script>
+
+    <script type="text/javascript">
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        // Function to close the menu
+        const closeMenu = () => {
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                menu.classList.add('close');
+                setTimeout(() => {
+                    menu.classList.remove('close');
+                    menu.classList.remove('display');
+                }, 500);
+                hamburger.classList.remove('open');
+            }
+        };
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hamburger.classList.toggle('open');
+            if (menu.classList.contains('open')) {
+                closeMenu();
+            } else {
+                menu.classList.add('display');
+                menu.classList.remove('close');
+                setTimeout(() => {
+                    menu.classList.add('open');
+                }, 10);
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Close menu when a link is clicked
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                closeMenu();
+            });
+        });
+    });
+</script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const closeBtn = document.querySelector('.close');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+
+  thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function () {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+      });
+  });
+
+  closeBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', function (e) {
+      if (e.target !== modalImg) {
+          modal.style.display = 'none';
+      }
+  });
+});
+    </script>
+    
+    <script>
+        const filterContainer = document.querySelector(".gallery-filter"),
+galleryItems = document.querySelectorAll(".gallery-item");
+
+filterContainer.addEventListener("click", (event) =>{
+  if(event.target.classList.contains("filter-item")){
+     // deactivate existing active 'filter-item'
+     filterContainer.querySelector(".active").classList.remove("active");
+     // activate new 'filter-item'
+     event.target.classList.add("active");
+     const filterValue = event.target.getAttribute("data-filter");
+     galleryItems.forEach((item) =>{
+      if(item.classList.contains(filterValue) || filterValue === 'all'){
+        item.classList.remove("hide");
+         item.classList.add("show");
+      }
+      else{
+        item.classList.remove("show");
+        item.classList.add("hide");
+      }
+     });
+  }
+});
+    </script>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
